@@ -11,4 +11,4 @@ These code are tested on Xperia XZ1.
 - [aframe + webcam + camera control + VRM](https://chastity1234.github.io/mrtest/cam03.html)
   - VRM Model from [ニコニ立体ちゃん](https://3d.nicovideo.jp/alicia/)
   - Motion from [BVHsample10](http://www.drf.co.jp/liveanimation/library/la_bvh_sample.html)
-- [LICENSE](./LICENSE) except VRM Model or Motion
+- [LICENSE](./LICENSE) except above VRM Model or Motion
