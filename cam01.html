@@ -1,0 +1,32 @@
+<html>
+<head>
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script>
+  navigator.mediaDevices.getUserMedia({audio: false, video: { facingMode:
+ { exact: "environment" } }})
+  .then(stream => {
+    let $video = document.querySelector('video')
+    $video.srcObject = stream
+    $video.onloadedmetadata = () => {
+      $video.play()
+    }
+  })
+</script>
+</head>
+
+<body>
+<a-scene background="color: #ECECEC">
+<!--
+  <a-plane position="0 0 -1" material="src: #webcam"> width="3" height="2"</a-pl
+ane>
+-->
+  <a-assets>
+    <video id="webcam"></video>
+  </a-assets>
+  <a-video src="#webcam" position="0 0 -2" width="3.2" height="1.8"></a-video>
+  <a-plane position="0 -1 -1" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
+  <a-camera position="0 0 0"></a-camera>
+</a-scene>
+
+</body>
+</html>
