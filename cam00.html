@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>video</title>
+  <script>
+    var p = navigator.mediaDevices.getUserMedia({ audio: false, video: { facingMode: { exact: "environment" } } });
+
+    p.then(function(stream) {
+      var video = document.getElementById('cam');
+      video.srcObject = stream;
+      video.onloadedmetadata = function(e) {
+        video.play();
+      };
+    })
+    .catch(function(err) {
+      console.log(err.name + ": " + err.message);
+    });
+  </script>
+  </head>
+
+  <body>
+  <video id="cam"></video>
+  </body>
+</html>
