@@ -1,0 +1,30 @@
+<html>
+<head>
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script>
+var p = navigator.mediaDevices.getUserMedia({ audio: false, video: { facingMode: { exact: "environment" } } });
+
+p.then(function(stream) {
+  var video = document.getElementById('cam');
+  video.srcObject = stream;
+  video.onloadedmetadata = function(e) {
+    video.play();
+  };
+})
+</script>
+</head>
+
+<body>
+<a-scene>
+  <a-assets>
+    <video id="cam"></video>      
+  </a-assets>
+
+  <a-box position="0 1.6 -1" width="0.5" height="0.5" color="#7BC8A4" shadow></a-box>
+  <a-camera position="0 1.6 0">
+    <a-video src="#cam" position="0 0 -2" width="3" height="2"></a-video>
+  </a-camera>
+</a-scene>
+
+</body>
+</html>
