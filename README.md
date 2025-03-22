@@ -11,3 +11,6 @@ These code are tested on Xperia XZ1.
   - [VRM Model](AliciaSolid.vrm) from [ニコニ立体ちゃん](https://3d.nicovideo.jp/alicia/)
   - [Motion](la_bvh_sample10.bvh) from [LA STUDIO](http://www.drf.co.jp/liveanimation/library/la_bvh_sample.html)
 - [ar](https://chastity1234.github.io/mrtest/ar.html)
+
+aixr
+- [aixr](https://chastity1234.github.io/mrtest/aixr.html)
