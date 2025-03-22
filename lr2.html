@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<script>
+  var p = navigator.mediaDevices.getUserMedia({ audio: false, video: { facingMode: { exact: "environment" } } });
+
+  p.then(function(stream) {
+    var video1 = document.getElementById('cam1');
+    video1.srcObject = stream;
+    video1.onloadedmetadata = function(e) {
+      video1.play();
+    };
+    var video2 = document.getElementById('cam2');
+    video2.srcObject = stream;
+    video2.onloadedmetadata = function(e) {
+      video2.play();
+    };
+  })
+  .catch(function(err) {
+    console.log(err.name + ": " + err.message);
+  });
+</script>
+</HEAD>
+
+<BODY style="background-color: black;">
+<img style="z-index: 2; position: absolute; top: 0%; left: 20%;" src="lr2.webp" /> 
+<div style="display: flex;">
+<video id="cam1" style="z-index: 1; flex-basic: 50%;"></video>
+<video id="cam2" style="z-index: 1; flex-basic: 50%;"></video>
+</div>
+
+</BODY>
+
+</HTML>
